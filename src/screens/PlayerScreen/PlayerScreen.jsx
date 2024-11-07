@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import Sound from 'react-native-sound';
+import { View, StyleSheet, Platform } from 'react-native';
+import SoundPlayer from '../../utils/SoundPlayer';
 import { colors } from '../../theme';
 import audioTranscriptJson from '../../assets/data/audio-transcript.json';
 import sanitizeTranscript from '../../utils/sanitizeTranscript';
@@ -10,18 +10,22 @@ import ProgressSlider from '../../components/ProgressSlider';
 import Controls from '../../components/Controls';
 import VolumeControl from '../../components/VolumeControl';
 
-Sound.setCategory('Playback');
+const audioFile = {
+  web: '/sound.mp3',
+  ios: 'sound.mp3',
+}[Platform.OS];
 
 export default function PlayerScreen() {
   const transcript = sanitizeTranscript(audioTranscriptJson);
+
+  const soundPlayerInitCallback = (duration) => {
+    if (duration) {
+      setDuration(duration);
+    }
+  };
+
   const player = useMemo(() => {
-    const sound = new Sound('sound.mp3', Sound.MAIN_BUNDLE, (error) => {
-      if (error) {
-        console.log('Error loading sound:', error);
-      } else {
-        setDuration(sound.getDuration() * 1000); // Set duration in milliseconds
-      }
-    });
+    const sound = new SoundPlayer(audioFile, soundPlayerInitCallback);
     return sound;
   }, []);
 
@@ -145,6 +149,7 @@ export default function PlayerScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    minHeight: '100vh',
     backgroundColor: colors.white['100'],
   },
   bottomSection: {

@@ -17,7 +17,6 @@ export default function ProgressSlider({
   return (
     <View style={styles.progressWrapper}>
       <Slider
-        style={styles.slider}
         minimumValue={0}
         maximumValue={duration}
         value={currentTime}
@@ -38,15 +37,12 @@ export default function ProgressSlider({
 const styles = StyleSheet.create({
   progressWrapper: {
     marginVertical: 10,
-  },
-  slider: {
     width: '90%',
     alignSelf: 'center',
   },
   timeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
   },
   timeText: {
     fontSize: 12,

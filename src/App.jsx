@@ -20,6 +20,9 @@ function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    backgroundColor: 'blue',
+    padding: 100,
+    displayL: 'none',
   },
 });
 

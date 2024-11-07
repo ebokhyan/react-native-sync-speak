@@ -1,4 +1,12 @@
 {
   "name": "SyncSpeak",
-  "displayName": "SyncSpeak"
+  "displayName": "SyncSpeak",
+  "expo": {
+    "name": "YourAppName",
+    "slug": "your-app-slug",
+    "platforms": ["ios", "android", "web"],
+    "web": {
+      "bundler": "webpack"
+    }
+  }
 }
