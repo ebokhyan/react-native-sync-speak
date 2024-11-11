@@ -3,12 +3,14 @@ import { View, Image, StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
 import { colors } from '../../theme';
 
-const VolumeControl = ({ player }) => {
+const VolumeControl = ({ onChange }) => {
   const [volume, setVolume] = useState(1);
 
   const onVolumeChange = (value) => {
     setVolume(value);
-    player.setVolume(value);
+    if (typeof onChange === 'function') {
+      onChange(value);
+    }
   };
 
   return (

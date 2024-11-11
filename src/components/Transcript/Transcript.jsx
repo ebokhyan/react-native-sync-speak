@@ -34,16 +34,18 @@ const Transcript = ({ transcript, activePhraseIndex, onJumpToPhrase }) => {
       contentContainerStyle={styles.transcriptContainer}
     >
       {transcript.map((row, index) => (
-        <View
+        <TouchableOpacity
           key={row.phrase}
-          style={[
-            styles.phraseContainer,
-            ...[activePhraseIndex === index && styles.activePhraseContainer],
-            { opacity: getOpacityForIndex(index, activePhraseIndex) },
-          ]}
+          onPress={() => onJumpToPhrase(index)}
         >
-          <Text style={styles.speakerLabel}>{row.speaker}:</Text>
-          <TouchableOpacity onPress={() => onJumpToPhrase(index)}>
+          <View
+            style={[
+              styles.phraseContainer,
+              ...[activePhraseIndex === index && styles.activePhraseContainer],
+              { opacity: getOpacityForIndex(index, activePhraseIndex) },
+            ]}
+          >
+            <Text style={styles.speakerLabel}>{row.speaker}:</Text>
             <Text
               style={[
                 styles.phraseText,
@@ -52,8 +54,8 @@ const Transcript = ({ transcript, activePhraseIndex, onJumpToPhrase }) => {
             >
               {row.phrase}
             </Text>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       ))}
     </ScrollView>
   );

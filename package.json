@@ -7,9 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest",
-    "web": "webpack serve --config webpack.config.js --mode development",
-    "web-build": "webpack --config webpack.config.js --mode production"
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-community/blur": "^4.4.1",
@@ -42,9 +40,7 @@
     "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "2.8.8",
     "react-test-renderer": "18.3.1",
-    "style-loader": "^4.0.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "style-loader": "^4.0.0"
   },
   "engines": {
     "node": ">=18"
