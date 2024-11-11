@@ -18,7 +18,6 @@ export default function useAudioPlayer(audioFile, transcript) {
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Interval to update currentTime when playing
   useEffect(() => {
     let interval;
     if (isPlaying) {
@@ -31,7 +30,6 @@ export default function useAudioPlayer(audioFile, transcript) {
     return () => clearInterval(interval);
   }, [isPlaying, player]);
 
-  // Playback control functions
   const play = () => {
     setIsPlaying(true);
     player.play(() => {
@@ -54,7 +52,6 @@ export default function useAudioPlayer(audioFile, transcript) {
     player.setVolume(volume);
   };
 
-  // Phrase navigation
   const activePhraseIndex = transcript.findIndex((phrase, index) => {
     const phraseStartTime = index === 0 ? 0 : transcript[index - 1].startTime;
     const phraseEndTime = phrase.endTime;
