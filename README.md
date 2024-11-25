@@ -1,80 +1,82 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# SyncSpeak
 
-# Getting Started
+SyncSpeak is a React Native app designed for playing audio alongside an interactive transcript. The app highlights phrases in real-time as the audio progresses and offers user-friendly playback controls.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
+- **Interactive Transcripts**: Displays phrases with speaker names, highlighting each in sync with the audio playback.
+- **Playback Controls**:
+   - **Play/Pause**: Start: or pause the audio at any point.
+   - **Next Phrase**: Skip: to the beginning of the next phrase.
+   - **Previous Phrase**: Return to the beginning of the current phrase, or the previous one if already at the start.
+- **Volume Control Slider**: Adjust the playback volume.
+- **Audio Progress Bar**: Displays current playback progress and supports manual sliding to different positions.
+- **Phrase Jump**: Click on a phrase to jump directly to that part of the audio.
 
-## Step 1: Start the Metro Server
+## Demo
+You can access the deployed web version of the app here: [Deployed Web Version](https://sync-speak-xi.vercel.app/)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+**Note:** For the best experience, use a desktop browser with responsive mode enabled.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Installation
+Follow these steps to set up the project locally:
 
-```bash
-# using npm
+## Prerequisites
+Ensure you have the following installed:
+1. **Node.js** (v18 or later)
+2. **npm or yarn**: Comes with Node.js, or install separately.
+3. **Java Development Kit (JDK)**: Required for Android development. Install JDK
+4. **Android Studio**: For Android emulator and tools. Install Android Studio
+5. **Xcode** (macOS only): Required for iOS development on macOS. Install Xcode
+6. **CocoaPods** (macOS only): Required for managing iOS native dependencies. Install it with:
+```
+sudo gem install cocoapods
+```
+7. **React Native CLI**: Install globally:
+```
+npm install -g react-native-cli
+```
+
+## Clone the Repository
+```
+git clone https://github.com/ebokhyan/react-native-sync-speak.git SyncSpeak
+cd SyncSpeak
+```
+
+## Install Dependencies
+Run the following command to install all necessary dependencies:
+```
+npm install
+```
+
+**iOS-Specific Step**: Install CocoaPods Dependencies:
+```
+cd ios
+pod install
+```
+
+Return to the root project directory after installation:
+```
+cd ..
+```
+
+## Running the App
+**For Android:**
+
+1. Start the Metro bundler:
+```
 npm start
-
-# OR using Yarn
-yarn start
 ```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
+2. Run the app on an Android device or emulator:
+```
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### For iOS
-
-```bash
-# using npm
+**For iOS:**
+1. Start the Metro bundler:
+```
+npm start
+```
+2. Run the app on an iOS device or simulator:
+```
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# react-native-sync-speak
